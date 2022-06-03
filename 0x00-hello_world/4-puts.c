@@ -1,6 +1,9 @@
 #include<stdio.h>
 
-## Using the function "puts" ##
+/**
+ * Using the function "puts"
+ *
+ */
 
 int main(void)
 {
