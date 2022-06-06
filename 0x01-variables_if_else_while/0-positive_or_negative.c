@@ -2,13 +2,13 @@
 #include <time.h>
 #include <stdio.h>
 
-/**
+/*
  * This program assigns a random number to the variable "n"
  * then print whether it is zeiro or positive (greater than zero)
  * or negative (less than zero)
- *
- * Return: Always (Success)
  */
+
+/* Return: Always (Success) */
 int main(void)
 {
 	int n;
