@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * main - Entry point
+ * main - Program that prints _putchar
  *
- * Return: Always 0 (Success)
+ * Return: (0)
  */
 int main(void)
 {
-	char c[10] = "Holberton";
 	int i = 0;
+	char c[8] = "_putchar";
 	
 	while (i < 9)
 	{
