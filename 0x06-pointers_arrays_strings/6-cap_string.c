@@ -9,36 +9,27 @@
 
 char *cap_string(char *str)
 {
-	char sep[] = ",\t;\n; .!?\"(){}";
-	int check, i, j;
+	int i = 0, j;
+	char a[] = " \t\n,;.!?\"(){}";
 
-	for (i = 0; str[i] != '\0'; i++)
+	while (*(str + i))
 	{
-		check = 0;
-
-		if (i == 0)
+		if (*(str + i) >= 'a' && *(str + i) <= 'z')
 		{
-			check = 1;
-		}
-		else
-		{
-			for (j = 0; sep[j] 1= '\0'; j++)
+			if (i == 0)
+				*(str + i) -= 'a' - 'A';
+			else
 			{
-				if (str[i - 1] == sep[j])
+				for (j = 0; j <= 12; j++)
 				{
-					check = 1;
-					break;
+					if (a[j] == *(str + i - 1))
+					{
+						*(str + i) -= 'a' - 'A';
+					}
 				}
 			}
 		}
-
-		if (check == 1)
-		{
-			if (str[i] <= 'z' && str[i] >= 'a')
-			{
-				str[i] -= ('a' - 'A');
-			}
-		}
+		i++;
 	}
 
 	return (str);
