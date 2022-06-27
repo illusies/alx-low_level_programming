@@ -11,7 +11,7 @@
 
 char *argstostr(int ac, char **av)
 {
-	char *s;
+	char *all_args;
 	int check, con_cat, i, j, k;
 
 	if (ac == 0 || av == NULL)
@@ -24,7 +24,6 @@ char *argstostr(int ac, char **av)
 			con_cat++;
 		check += con_cat + 1;
 	}
-
 	all_args = malloc((check + 1) * sizeof(char));
 
 	if (all_args == 0)
