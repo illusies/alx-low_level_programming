@@ -2,6 +2,30 @@
 #include <stdlib.h>
 
 /**
+ * count_w - function that counts the strings
+ * @s: char
+ * Return: int
+ */
+
+int count_w(char *s)
+{
+	int i, check = 0, count = 0;
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if (s[i] == ' ')
+			check = 0;
+		else if (check == 0)
+		{
+			check = 1;
+			count ++;
+		}
+	}
+
+	return (count);
+}
+
+/**
  * **strtow - function that splits a string into words
  * @str: char
  * Return: pointer or NULL
@@ -47,29 +71,5 @@ char **strtow(char *str)
 	s_split[k] = NULL;
 
 	return (s_split);
-}
-
-/**
- * count_w - function that counts the strings
- * @s: char
- * Return: int
- */
-
-int count_w(char *s)
-{
-	int i, check = 0, count = 0;
-
-	for (i = 0; s[i] != '\0'; i++)
-	{
-		if (s[i] == ' ')
-			check = 0;
-		else if (check == 0)
-		{
-			check = 1;
-			count++;
-		}
-	}
-
-	return (count);
 }
 
