@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include <stdio.h>
 #include "3-calc.h"
 
 /**
@@ -8,17 +10,17 @@
  */
 int main(int argc, char *argv[])
 {
-	register int a, b;
-	int (*fptr)(int, int);
+	int op;
 
 	if (argc != 4)
-		printf("Error\n"), exit(98);
-	fptr = get_op_func(argv[2]);
-	if (!fptr)
-		printf("Error\n"), exit(99);
-	a = atoi(argv[1]);
-	b = atoi(argv[3]);
-	printf("%i\n", fptr(a, b));
+	{
+		printf("Error\n");
+		exit(98);
+	}
+
+	op = (*get_op_func(argv[2]))(atoi(argv[1]), atoi(argv[3]));
+	printf("%d\n", op);
+
 	return (0);
 }
 

@@ -1,3 +1,6 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 #include "3-calc.h"
 
 /**
@@ -16,15 +19,17 @@ int (*get_op_func(char *s))(int, int)
 		{"%", op_mod},
 		{NULL, NULL}
 	};
-	int  = 0;
+	int i = 0;
 
-	while (i < 5)
+	while (ops[i].op)
 	{
-		if (!strcmp(ops[i].op, s))
+		if (strcmp(s, ops[i].op) == 0)
+		{
 			return (ops[i].f);
+		}
 		i++;
 	}
-	return (NULL);
+	printf("Error\n");
+	exit(99);
 }
-wq
 
